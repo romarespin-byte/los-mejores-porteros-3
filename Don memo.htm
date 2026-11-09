@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DON MEMO - Guillermo Ochoa</title>
+    <style>
+        body { 
+            background: #d7d7d8c5;
+            color: black;
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background: #2e9b2a;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.932);
+        }
+        header h1 {
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            padding: 30px;
+            line-height: 30px;
+            animation: iluminacion 6s infinite;
+            border-radius: 25px;
+        }
+        .Contenedor {
+            background: #cbcecb;
+            color: #333;
+            padding: 40px;
+            margin: 50px;
+            border-radius: 25px;
+        }
+        
+        /* Contenedor principal en cuadrícula */
+        .info-grid {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between; 
+            gap: 30px; 
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Columna izquierda: Datos y foto */
+        .columna-izquierda {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .imagen-ochoa {
+            border-radius: 25px;
+            border: 4px solid rgb(224, 224, 166);
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+
+        .lista-datos {
+            background: #b8bab8;
+            padding: 15px 20px;
+            border-radius: 15px;
+            list-style: none;
+            color: #222;
+            font-weight: bold;
+            width: 100%;
+            max-width: 250px;
+            box-sizing: border-box;
+        }
+
+        .lista-datos li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        /* Columna central: Estadísticas completas e información */
+        .columna-centro {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 25px;
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .columna-centro h3 {
+            color: #2e9b2a;
+            border-bottom: 2px solid #2e9b2a;
+            padding-bottom: 5px;
+        }
+
+        /* Columna derecha: Cuadro de Retiro y la barra de desplazamiento de las copas al lado */
+        .columna-derecha {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            min-width: 250px;
+            align-items: center;
+        }
+
+        .Retiro {
+            background: #ffffff;
+            color: #000000;
+            padding: 20px;
+            border-radius: 25px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        
+        .retito1 {
+            border-radius: 25px;
+            float: left;
+        }
+
+        .in1 {
+            text-align: right;
+        }
+
+        /* Sección de Copas con barra de desplazamiento lateral */
+        .copas {
+            height: 280px; 
+            width: 100%; 
+            max-width: 250px;
+            border: 3px solid black;
+            overflow-y: auto;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 10px;
+            background-color: bisque;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .copas img {
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .copas::-webkit-scrollbar {
+            width: 12px;
+        }
+        .copas::-webkit-scrollbar-track {
+            background: antiquewhite;
+            border-radius: 8px;
+        }
+        .copas::-webkit-scrollbar-thumb {
+            background: red;
+            border-radius: 8px;
+        }
+
+        .img-principal {
+            border-radius: 25px;
+            border: 4px solid rgb(224, 224, 166);
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            padding: 10px;
+            background: #2e9b2a;
+            color: #f1f1f1;
+            margin: 50px;
+            text-align: center;
+        }
+
+        @keyframes iluminacion {
+            0%{ text-shadow: none; }
+            30%{ text-shadow: 0px 0px 20px rgb(30, 104, 61); }
+            60%{ 
+                text-shadow: 0px 0px 20px rgb(21, 58, 37),
+                0px 0px 25px rgb(28, 63, 26),
+                0px 0px 30px rgb(28, 54, 42); 
+            }
+            90%{ text-shadow: 0px 0px 20px white; }
+        }
+        button {
+                 background: #2e9b2a;
+                 color: white;
+                 padding: 10px 20px;
+                 border: none;
+                 border-radius: 5px;
+                 cursor: pointer;
+             }
+             a {
+                 color: #000000; 
+                text-decoration: none;
+                 font-weight: bold;
+                 }
+    </style>
+
+    <script language="javascript">
+        let x = 0;
+        let Imagenes = ["img/memo1.jpg", "img/memo2.jpg", "img/memo3.jpg", "img/memo4.jpg", "img/memo5.jpg", "img/memo6.jpg", "img/memo7.jpg", "img/memo8.jpg", "img/memo9.jpg", "img/memo10.jpg"];
+
+        function siguiente() {
+            x++;
+            if(x > 9) { x = 0; }
+            document.getElementById('Marco').src = Imagenes[x];
+        }
+
+        function Regreso() {
+            x--;
+            if(x < 0) { x = 9; }
+            document.getElementById('Marco').src = Imagenes[x];
+        }
+
+        function Continuar() {
+            setInterval(siguiente, 3000); // Cambiado a 3 segundos para que rote con calma
+        }
+    </script> 
+</head>
+
+<body onload="Continuar();">
+<header>
+    <h1>GUILLERMO OCHOA</h1>
+    <p>La leyenda de México</p>
+</header>
+ 
+<div style="text-align: center; margin-top: 20px;">
+    <img src="img/memo1.jpg" height="400" width="600" id="Marco" class="img-principal">
+</div>
+
+<main> 
+    <div class="Contenedor">
+        <h1>Francisco Guillermo Ochoa Magaña</h1>
+        
+        <div class="info-grid">
+            
+            <!-- 1. COLUMNA IZQUIERDA: Foto y Datos personales -->
+            <div class="columna-izquierda">
+                <div class="lista-datos">
+                    <img src="img2/fransua2.jpj.jpg" height="220" width="170" class="imagen-ochoa"> 
+                    <ul>  
+                        <li>F. Nacim./Edad: 13/07/1985 (41)</li>
+                        <li>Lugar de nac.: Guadalajara, México</li>
+                        <li>Nacionalidad: Mexicana</li>
+                        <li>Altura: 1,85 m</li>
+                        <li>Posición: Portero</li>
+                        <li>Agente: HIJAR</li>
+                        <li>Partidos internac./goles: 154 / 0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. COLUMNA CENTRAL: Información y Estadísticas detalladas -->
+            <div class="columna-centro">
+                <h3>Trayectoria e Historia</h3>
+                <p>Guillermo <b>"Paco Memo"</b> Ochoa es considerado uno de los arqueros más emblemáticos en la historia del fútbol mexicano. Su agilidad bajo los tres postes y sus históricas actuaciones en Copas del Mundo lo han inmortalizado a nivel internacional.</p>
+                
+                <h3>Estadísticas Destacadas</h3>
+                <ul>
+                    <li><b>Copas del Mundo disputadas:</b> 5 Mundiales (Alemania 2006, Sudáfrica 2010, Brasil 2014, Rusia 2018 y Qatar 2022).</li>
+                    <li><b>Atajadas memorables:</b> Récord histórico contra Brasil en 2014, impidiendo goles clave que le dieron la vuelta al mundo.</li>
+                    <li><b>Equipos principales:</b> América, Ajaccio, Málaga, Granada, Standard de Lieja, Salernitana, AVS y Limassol.</li>
+                </ul>
+            </div>
+
+            <!-- 3. COLUMNA DERECHA: Retiro y Galería de Copas con Scroll al lado -->
+            <div class="columna-derecha">
+                <div class="Retiro">
+                    <form name="Tabla">
+                        <img class="retito1" src="img2/retiro.jpg" height="140" width="120" alt="Retiro">
+                        <h2>RETIRO</h2>
+                        <ul class="in1">
+                            <li>Último club: Limassol</li>
+                            <li>Más partidos: América (399)</li>
+                            <li>Retirado: 06/07/2026</li>
+                        </ul>
+                    </form>
+                </div>
+
+                <!-- Barra de desplazamiento con las copas al lado -->
+                <div class="copas">
+                    <h4>Galería de Copas</h4>
+                    <img src="img2/copas1.jpg" height="160" width="130"><br>
+                    <img src="img2/copas2.jpg" height="160" width="130"><br>
+                    <img src="img2/copas3.jpg" height="160" width="130"><br>
+                    <img src="img2/copas4.jpg" height="160" width="130"><br>
+                    <img src="img2/copas5.jpg" height="160" width="130">
+                </div>
+            </div>
+
+        </div>
+        <center> <button><a href="porteros.htm" >
+         VOLVER AL MENÚ PRINCIPAL
+    </a></button></center>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 página creada por RODRIGO OMAR</p>
+</footer>
+</body>
+</html>

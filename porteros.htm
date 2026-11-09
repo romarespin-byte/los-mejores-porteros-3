@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Leyendas de la Portería Mexicana</title>
+    <style>
+        /* Mismos estilos base de tus otras páginas */
+        body { background: #d7d7d8c5; color: black; margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
+        header { background: #333333; text-align: center; color: rgba(255, 255, 255, 0.932); }
+        header h1 { font-size: 50px; font-family: Georgia, serif; font-weight: bold; padding: 30px; line-height: 30px; animation: iluminacion 6s infinite; border-radius: 25px;}
+        
+        /* Contenedor idéntico al de los jugadores */
+        .Contenedor { background: #cbcecb; color: #333; padding: 40px; margin: 50px; border-radius: 25px; }
+        .info-grid { display: flex; align-items: flex-start; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+        
+        /* Diseño de tarjetas adaptado al estilo "columna-centro" y "lista-datos" */
+        .tarjeta { background: #ffffff; padding: 20px; border-radius: 25px; min-width: 200px; max-width: 250px; text-align: center; border: 4px solid #b8bab8; transition: transform 0.3s; }
+        .tarjeta:hover { transform: scale(1.05); border-color: #333333; }
+        .tarjeta h3 { color: #333; border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .tarjeta img { border-radius: 15px; width: 100%; height: 200px; object-fit: cover; border: 2px solid black; margin-bottom: 15px; }
+        .tarjeta a { display: inline-block; background: #333; color: white; text-decoration: none; padding: 10px 20px; border-radius: 15px; font-weight: bold; margin-top: 10px; }
+        
+        /* Imagen principal con marco animado */
+        .img-principal { border-radius: 25px; border: 4px solid #333; max-width: 100%; height: auto; }
+        footer { padding: 10px; background: #333333; color: #f1f1f1; margin: 50px; text-align: center; }
+        
+        @keyframes iluminacion { 0%{ text-shadow: none; } 50%{ text-shadow: 0px 0px 20px rgb(150, 150, 150); } 100%{ text-shadow: 0px 0px 20px white; } }
+    </style>
+    <script>
+        let x = 0;
+        // Imágenes representativas de los 5 arqueros para el carrusel del menú principal
+        let Imagenes = ["img/memo1.jpg", "img/campos1.jpg", "img/rios1.jpg", "img/moy1.jpg", "img/malagon1.jpg"];
+        function siguiente() {
+            x++; if(x >= Imagenes.length) { x = 0; }
+            document.getElementById('Marco').src = Imagenes[x];
+        }
+        function Continuar() { setInterval(siguiente, 3000); }
+    </script>
+</head>
+<body onload="Continuar();">
+<header>
+    <h1>LEYENDAS BAJO LOS 3 POSTES</h1>
+    <p>Menú Principal de los Guardianes de México</p>
+</header>
+
+<!-- Carrusel de imágenes al estilo de las otras páginas -->
+<div style="text-align: center; margin-top: 20px;">
+    <img src="img/memo1.jpg" height="400" width="600" id="Marco" class="img-principal">
+</div>
+
+<main> 
+    <div class="Contenedor">
+        <h1 style="text-align: center; border-bottom: 3px solid #333; padding-bottom: 10px;">Selecciona un Arquero</h1>
+        <div class="info-grid">
+            
+            <div class="tarjeta">
+                <img src="img2/fransua2.jpj.jpg" alt="Guillermo Ochoa">
+                <h3>Guillermo Ochoa</h3>
+                <a href="Don memo.htm">Ver Perfil</a>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img2/Joege1.jpg" alt="Jorge Campos">
+                <h3>Jorge Campos</h3>
+                <a href="campos.htm">Ver Perfil</a>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img/adolfo1.jpg" alt="Adolfo Ríos">
+                <h3>Adolfo Ríos</h3>
+                <a href="adolfo.htm">Ver Perfil</a>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img2/muñoz1.jpg" alt="Moisés Muñoz">
+                <h3>Moisés Muñoz</h3>
+                <a href="moises.htm">Ver Perfil</a>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img2/Luis_Angel_Malagon_2.png" alt="Luis Malagón">
+                <h3>Luis Malagón</h3>
+                <a href="malagon.htm">Ver Perfil</a>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer><p>&copy; 2026 página creada por RODRIGO OMAR</p></footer>
+</body>
+</html>

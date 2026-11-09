@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ADOLFO RÍOS - El Arquero de Cristo</title>
+    <style>
+        body {
+  background: #d7d7d8c5;
+  color: black;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+background: #5877ff;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.932);
+}
+
+header h1 {
+  font-size: 50px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  padding: 30px;
+  line-height: 30px;
+  animation: iluminacion 6s infinite;
+}
+
+.Contenedor {
+  background: #cbcecb;
+  color: #333;
+  padding: 40px;
+  margin: 50px;
+  border-radius: 25px;
+}
+
+.info-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.columna-izquierda {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.imagen-portero {
+  border-radius: 25px;
+  border: 4px solid rgb(154, 212, 245);
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+.lista-datos {
+  background: #b8bab8;
+  padding: 15px 20px;
+  border-radius: 15px;
+  list-style: none;
+  color: #222;
+  font-weight: bold;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+.lista-datos li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.columna-centro {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 25px;
+  flex: 2;
+  min-width: 300px;
+}
+
+.columna-centro h3 {
+  color: #5877ff;
+  border-bottom: 2px solid#5877ff;
+  padding-bottom: 5px;
+}
+
+.columna-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 250px;
+  align-items: center;
+}
+
+.Retiro {
+  background: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.retito1 {
+  border-radius: 25px;
+  float: left;
+}
+
+.in1 {
+  text-align: right;
+}
+
+.copas {
+  height: 280px;
+  width: 100%;
+  max-width: 250px;
+  border: 3px solid black;
+  overflow-y: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #b3def1;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.copas img {
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.copas::-webkit-scrollbar {
+  width: 12px;
+}
+
+.copas::-webkit-scrollbar-track {
+  background: #1fb8f5;
+  border-radius: 8px;
+}
+
+.copas::-webkit-scrollbar-thumb {
+  background: #5877ff;
+  border-radius: 8px;
+}
+
+.img-principal {
+  border-radius: 25px;
+  border: 4px solid rgb(122, 188, 231);
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  padding: 10px;
+  background: #5877ff;
+  color: #f1f1f1;
+  margin: 50px;
+  text-align: center;
+}
+button {
+         background: #5877ff;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 5px;
+        cursor: pointer;
+             }
+             a {
+                 color: #000000; 
+                text-decoration: none;
+                 font-weight: bold;
+                 }
+@keyframes iluminacion {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0px 0px 20px rgb(6, 52, 95);
+  }
+  100% {
+    text-shadow: 0px 0px 20px white;
+  }
+}
+
+    </style>
+    <script>
+        let x = 0;
+        let Imagenes = ["img/rios1.jpg", "img/rios2.jpg","img/rios3.jpg","img/rios4.jpg","img/rios5.jpg","img/rios6.jpg","img/rios7.jpg","img/rios8.jpg","img/rios9.jpg","img/rios10.jpg",];
+        function siguiente() {
+            x++; if(x >= Imagenes.length) { x = 0; }
+            document.getElementById('Marco').src = Imagenes[x];
+        }
+        function Continuar() { setInterval(siguiente, 3000); }
+    </script>
+</head>
+<body onload="Continuar();">
+<header>
+    <h1>ADOLFO RÍOS</h1>
+    <p>El histórico guardameta de Pumas, Necaxa y América</p>
+</header>
+<div style="text-align: center; margin-top: 20px;">
+    <img src="img/rios1.jpg" height="400" width="600" id="Marco" class="img-principal">
+</div>
+<main> 
+    <div class="Contenedor">
+        <h1>Adolfo Ríos García</h1>
+        <div class="info-grid">
+            <div class="columna-izquierda">
+                <div class="lista-datos">
+                    <img src="img/adolfo1.jpg" height="220" width="170" class="imagen-portero"> 
+                    <ul>  
+                        <li>F. Nacim.: 11/12/1966</li>
+                        <li>Lugar de nac.: Uruapan, Michoacán</li>
+                        <li>Nacionalidad: Mexicana</li>
+                        <li>Altura: 1,83 m</li>
+                        <li>Posición: Portero</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="columna-centro">
+                <h3>Trayectoria e Historia</h3>
+                <p>Uno de los porteros más consistentes y respetados del fútbol mexicano de las décadas de los 80, 90 y principios de los 2000. Campeón de liga con el Club América en el Verano 2002.</p>
+                <h3>Estadísticas Destacadas</h3>
+                <ul>
+                    <li><b>Clubes destacados:</b> Pumas, Veracruz, Necaxa y América.</li>
+                    <li><b>Liderazgo:</b> Capitán ejemplar y referente de seguridad defensiva.</li>
+                </ul>
+            </div>
+            <div class="columna-derecha">
+                <div class="Retiro">
+                    <img class="retito1" src="img2/retiro.jpg" height="140" width="120" alt="Retiro">
+                    <h2>RETIRO</h2>
+                    <ul class="in1">
+                        <li>Último club: América</li>
+                        <li>Retirado: 2004</li>
+                    </ul>
+                </div>
+                <div class="copas">
+                    <h4>Copas</h4>
+                    <img src="img2/copasma2.jpg" height="160" width="130"><br>
+                    <img src="img2/copasma2.jpg" height="160" width="130">
+                </div>
+            </div>
+        </div>
+        <center> <button><a href="porteros.htm" >
+         VOLVER AL MENÚ PRINCIPAL
+    </a></button></center>
+    </div>
+</main>
+<footer><p>&copy; 2026 página creada por RODRIGO OMAR</p></footer>
+</body>
+</html>
